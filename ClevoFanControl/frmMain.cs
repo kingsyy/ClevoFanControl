@@ -159,12 +159,12 @@ namespace ClevoFanControl {
                 currentGpuFan = CalcFanPercentage("GPU", currentGpuTemp);
             }
 
-            if (btnACFans.Checked && SystemInformation.PowerStatus.PowerLineStatus == PowerLineStatus.Online) {
-                if (currentCpuFan < 30) {
-                    currentCpuFan = 30;
+            if (checkboxOnAC.Checked && SystemInformation.PowerStatus.PowerLineStatus == PowerLineStatus.Online) {
+                if (currentCpuFan < txtMinimumFanSpeed.Value) {
+                    currentCpuFan = (int)txtMinimumFanSpeed.Value;
                 }
-                if (currentGpuFan < 30) {
-                    currentGpuFan = 30;
+                if (currentGpuFan < txtMinimumFanSpeed.Value) {
+                    currentGpuFan = (int)txtMinimumFanSpeed.Value;
                 }
             }
 
@@ -516,7 +516,8 @@ namespace ClevoFanControl {
                     lastWTop = wTop;
 
                     btnAlwaysOnTop.Checked = Convert.ToBoolean(sw.ReadLine());
-                    btnACFans.Checked = Convert.ToBoolean(sw.ReadLine());
+                    checkboxOnAC.Checked = Convert.ToBoolean(sw.ReadLine());
+                    txtMinimumFanSpeed.Value = Convert.ToInt32(sw.ReadLine());
                     txtCpuSafetyTemp.Value = Convert.ToInt32(sw.ReadLine());
                     cpuSafetyTemp = Convert.ToInt32(txtCpuSafetyTemp.Value);
                     txtGpuSafetyTemp.Value = Convert.ToInt32(sw.ReadLine());
@@ -589,7 +590,8 @@ namespace ClevoFanControl {
                 }
 
                 sw.WriteLine(btnAlwaysOnTop.Checked);
-                sw.WriteLine(btnACFans.Checked);
+                sw.WriteLine(checkboxOnAC.Checked);
+                sw.WriteLine((int)txtMinimumFanSpeed.Value);
                 sw.WriteLine(txtCpuSafetyTemp.Value.ToString());
                 sw.WriteLine(txtGpuSafetyTemp.Value.ToString());
                 sw.WriteLine(btnGpuBattMonitor.Checked);
