@@ -65,9 +65,20 @@ namespace ClevoFanControl {
             this.tabFanCurves = new System.Windows.Forms.TabControl();
             this.tabFanCurveCPU = new System.Windows.Forms.TabPage();
             this.cpuPlot = new CurveEditorControl.PlotCanvasContainer();
+            this.checkboxCPUOnAC = new System.Windows.Forms.CheckBox();
+            this.txtMinimumOnCPU = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblCpuSafetyTemp = new System.Windows.Forms.Label();
+            this.txtCpuSafetyTemp = new System.Windows.Forms.NumericUpDown();
+            this.lblCpuSafetyTemp2 = new System.Windows.Forms.Label();
             this.tabFanCurveGPU = new System.Windows.Forms.TabPage();
+            this.checkboxGPUOnAC = new System.Windows.Forms.CheckBox();
+            this.txtMinimumOnGPU = new System.Windows.Forms.NumericUpDown();
+            this.txtGpuSafetyTemp = new System.Windows.Forms.NumericUpDown();
             this.gpuPlot = new CurveEditorControl.PlotCanvasContainer();
-            this.lblFanCurveHeader = new System.Windows.Forms.Label();
+            this.lblGpuSafetyTemp2 = new System.Windows.Forms.Label();
+            this.lblGpuSafetyTemp = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnlProfiles = new System.Windows.Forms.Panel();
             this.btnProfile50 = new System.Windows.Forms.RadioButton();
             this.btnProfileMax = new System.Windows.Forms.RadioButton();
@@ -77,17 +88,8 @@ namespace ClevoFanControl {
             this.btnExit = new System.Windows.Forms.Button();
             this.btnAlwaysOnTop = new System.Windows.Forms.CheckBox();
             this.tipTooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.lblCpuSafetyTemp = new System.Windows.Forms.Label();
-            this.lblCpuSafetyTemp2 = new System.Windows.Forms.Label();
-            this.txtCpuSafetyTemp = new System.Windows.Forms.NumericUpDown();
-            this.txtGpuSafetyTemp = new System.Windows.Forms.NumericUpDown();
-            this.lblGpuSafetyTemp2 = new System.Windows.Forms.Label();
-            this.lblGpuSafetyTemp = new System.Windows.Forms.Label();
             this.btnGpuBattMonitor = new System.Windows.Forms.CheckBox();
             this.tmrGui = new System.Windows.Forms.Timer(this.components);
-            this.txtMinimumFanSpeed = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.checkboxOnAC = new System.Windows.Forms.CheckBox();
             this.mnuMain.SuspendLayout();
             this.pnlCPUStats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgStatIntel)).BeginInit();
@@ -102,11 +104,12 @@ namespace ClevoFanControl {
             this.panel1.SuspendLayout();
             this.tabFanCurves.SuspendLayout();
             this.tabFanCurveCPU.SuspendLayout();
-            this.tabFanCurveGPU.SuspendLayout();
-            this.pnlProfiles.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMinimumOnCPU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCpuSafetyTemp)).BeginInit();
+            this.tabFanCurveGPU.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMinimumOnGPU)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGpuSafetyTemp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMinimumFanSpeed)).BeginInit();
+            this.pnlProfiles.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblCPUHeader
@@ -470,7 +473,6 @@ namespace ClevoFanControl {
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.tabFanCurves);
-            this.panel1.Controls.Add(this.lblFanCurveHeader);
             this.panel1.Location = new System.Drawing.Point(12, 199);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(579, 356);
@@ -481,20 +483,26 @@ namespace ClevoFanControl {
             this.tabFanCurves.Controls.Add(this.tabFanCurveCPU);
             this.tabFanCurves.Controls.Add(this.tabFanCurveGPU);
             this.tabFanCurves.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabFanCurves.Location = new System.Drawing.Point(3, 34);
+            this.tabFanCurves.Location = new System.Drawing.Point(3, 3);
             this.tabFanCurves.Name = "tabFanCurves";
             this.tabFanCurves.SelectedIndex = 0;
-            this.tabFanCurves.Size = new System.Drawing.Size(573, 317);
+            this.tabFanCurves.Size = new System.Drawing.Size(573, 348);
             this.tabFanCurves.TabIndex = 1;
             // 
             // tabFanCurveCPU
             // 
             this.tabFanCurveCPU.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tabFanCurveCPU.Controls.Add(this.cpuPlot);
+            this.tabFanCurveCPU.Controls.Add(this.checkboxCPUOnAC);
+            this.tabFanCurveCPU.Controls.Add(this.txtMinimumOnCPU);
+            this.tabFanCurveCPU.Controls.Add(this.label1);
+            this.tabFanCurveCPU.Controls.Add(this.lblCpuSafetyTemp);
+            this.tabFanCurveCPU.Controls.Add(this.txtCpuSafetyTemp);
+            this.tabFanCurveCPU.Controls.Add(this.lblCpuSafetyTemp2);
             this.tabFanCurveCPU.Location = new System.Drawing.Point(4, 27);
             this.tabFanCurveCPU.Name = "tabFanCurveCPU";
             this.tabFanCurveCPU.Padding = new System.Windows.Forms.Padding(3);
-            this.tabFanCurveCPU.Size = new System.Drawing.Size(565, 286);
+            this.tabFanCurveCPU.Size = new System.Drawing.Size(565, 317);
             this.tabFanCurveCPU.TabIndex = 0;
             this.tabFanCurveCPU.Text = "CPU";
             // 
@@ -528,16 +536,128 @@ namespace ClevoFanControl {
             this.cpuPlot.XAxisItem10 = "90°";
             this.cpuPlot.PlotChanged += new System.Action<object, CurveEditorControl.PlotChangedEventArgs>(this.cpuPlot_PlotChanged);
             // 
+            // checkboxCPUOnAC
+            // 
+            this.checkboxCPUOnAC.AutoSize = true;
+            this.checkboxCPUOnAC.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkboxCPUOnAC.Location = new System.Drawing.Point(6, 280);
+            this.checkboxCPUOnAC.Name = "checkboxCPUOnAC";
+            this.checkboxCPUOnAC.Size = new System.Drawing.Size(100, 22);
+            this.checkboxCPUOnAC.TabIndex = 29;
+            this.checkboxCPUOnAC.Text = "Min on AC:";
+            this.checkboxCPUOnAC.UseVisualStyleBackColor = true;
+            // 
+            // txtMinimumOnCPU
+            // 
+            this.txtMinimumOnCPU.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMinimumOnCPU.Location = new System.Drawing.Point(112, 279);
+            this.txtMinimumOnCPU.Name = "txtMinimumOnCPU";
+            this.txtMinimumOnCPU.Size = new System.Drawing.Size(45, 24);
+            this.txtMinimumOnCPU.TabIndex = 28;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(155, 281);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(21, 18);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "%";
+            // 
+            // lblCpuSafetyTemp
+            // 
+            this.lblCpuSafetyTemp.AutoSize = true;
+            this.lblCpuSafetyTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCpuSafetyTemp.Location = new System.Drawing.Point(379, 281);
+            this.lblCpuSafetyTemp.Name = "lblCpuSafetyTemp";
+            this.lblCpuSafetyTemp.Size = new System.Drawing.Size(124, 18);
+            this.lblCpuSafetyTemp.TabIndex = 17;
+            this.lblCpuSafetyTemp.Text = "CPU safety temp:";
+            // 
+            // txtCpuSafetyTemp
+            // 
+            this.txtCpuSafetyTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCpuSafetyTemp.Location = new System.Drawing.Point(504, 279);
+            this.txtCpuSafetyTemp.Minimum = new decimal(new int[] {
+            80,
+            0,
+            0,
+            0});
+            this.txtCpuSafetyTemp.Name = "txtCpuSafetyTemp";
+            this.txtCpuSafetyTemp.Size = new System.Drawing.Size(45, 24);
+            this.txtCpuSafetyTemp.TabIndex = 21;
+            this.txtCpuSafetyTemp.Value = new decimal(new int[] {
+            90,
+            0,
+            0,
+            0});
+            this.txtCpuSafetyTemp.ValueChanged += new System.EventHandler(this.txtCpuSafetyTemp_ValueChanged);
+            // 
+            // lblCpuSafetyTemp2
+            // 
+            this.lblCpuSafetyTemp2.AutoSize = true;
+            this.lblCpuSafetyTemp2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCpuSafetyTemp2.Location = new System.Drawing.Point(547, 281);
+            this.lblCpuSafetyTemp2.Name = "lblCpuSafetyTemp2";
+            this.lblCpuSafetyTemp2.Size = new System.Drawing.Size(14, 18);
+            this.lblCpuSafetyTemp2.TabIndex = 20;
+            this.lblCpuSafetyTemp2.Text = "°";
+            // 
             // tabFanCurveGPU
             // 
             this.tabFanCurveGPU.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabFanCurveGPU.Controls.Add(this.checkboxGPUOnAC);
+            this.tabFanCurveGPU.Controls.Add(this.txtMinimumOnGPU);
+            this.tabFanCurveGPU.Controls.Add(this.txtGpuSafetyTemp);
             this.tabFanCurveGPU.Controls.Add(this.gpuPlot);
+            this.tabFanCurveGPU.Controls.Add(this.lblGpuSafetyTemp2);
+            this.tabFanCurveGPU.Controls.Add(this.lblGpuSafetyTemp);
+            this.tabFanCurveGPU.Controls.Add(this.label2);
             this.tabFanCurveGPU.Location = new System.Drawing.Point(4, 27);
             this.tabFanCurveGPU.Name = "tabFanCurveGPU";
             this.tabFanCurveGPU.Padding = new System.Windows.Forms.Padding(3);
-            this.tabFanCurveGPU.Size = new System.Drawing.Size(565, 286);
+            this.tabFanCurveGPU.Size = new System.Drawing.Size(565, 317);
             this.tabFanCurveGPU.TabIndex = 1;
             this.tabFanCurveGPU.Text = "GPU";
+            // 
+            // checkboxGPUOnAC
+            // 
+            this.checkboxGPUOnAC.AutoSize = true;
+            this.checkboxGPUOnAC.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkboxGPUOnAC.Location = new System.Drawing.Point(6, 280);
+            this.checkboxGPUOnAC.Name = "checkboxGPUOnAC";
+            this.checkboxGPUOnAC.Size = new System.Drawing.Size(100, 22);
+            this.checkboxGPUOnAC.TabIndex = 32;
+            this.checkboxGPUOnAC.Text = "Min on AC:";
+            this.checkboxGPUOnAC.UseVisualStyleBackColor = true;
+            // 
+            // txtMinimumOnGPU
+            // 
+            this.txtMinimumOnGPU.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMinimumOnGPU.Location = new System.Drawing.Point(112, 279);
+            this.txtMinimumOnGPU.Name = "txtMinimumOnGPU";
+            this.txtMinimumOnGPU.Size = new System.Drawing.Size(45, 24);
+            this.txtMinimumOnGPU.TabIndex = 31;
+            // 
+            // txtGpuSafetyTemp
+            // 
+            this.txtGpuSafetyTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGpuSafetyTemp.Location = new System.Drawing.Point(505, 279);
+            this.txtGpuSafetyTemp.Minimum = new decimal(new int[] {
+            80,
+            0,
+            0,
+            0});
+            this.txtGpuSafetyTemp.Name = "txtGpuSafetyTemp";
+            this.txtGpuSafetyTemp.Size = new System.Drawing.Size(45, 24);
+            this.txtGpuSafetyTemp.TabIndex = 24;
+            this.txtGpuSafetyTemp.Value = new decimal(new int[] {
+            90,
+            0,
+            0,
+            0});
+            this.txtGpuSafetyTemp.ValueChanged += new System.EventHandler(this.txtGpuSafetyTemp_ValueChanged);
             // 
             // gpuPlot
             // 
@@ -569,17 +689,35 @@ namespace ClevoFanControl {
             this.gpuPlot.XAxisItem10 = "90°";
             this.gpuPlot.PlotChanged += new System.Action<object, CurveEditorControl.PlotChangedEventArgs>(this.gpuPlot_PlotChanged);
             // 
-            // lblFanCurveHeader
+            // lblGpuSafetyTemp2
             // 
-            this.lblFanCurveHeader.AutoSize = true;
-            this.lblFanCurveHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFanCurveHeader.ForeColor = System.Drawing.Color.Black;
-            this.lblFanCurveHeader.Location = new System.Drawing.Point(4, 9);
-            this.lblFanCurveHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblFanCurveHeader.Name = "lblFanCurveHeader";
-            this.lblFanCurveHeader.Size = new System.Drawing.Size(100, 20);
-            this.lblFanCurveHeader.TabIndex = 0;
-            this.lblFanCurveHeader.Text = "Fan Curves";
+            this.lblGpuSafetyTemp2.AutoSize = true;
+            this.lblGpuSafetyTemp2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGpuSafetyTemp2.Location = new System.Drawing.Point(548, 281);
+            this.lblGpuSafetyTemp2.Name = "lblGpuSafetyTemp2";
+            this.lblGpuSafetyTemp2.Size = new System.Drawing.Size(14, 18);
+            this.lblGpuSafetyTemp2.TabIndex = 23;
+            this.lblGpuSafetyTemp2.Text = "°";
+            // 
+            // lblGpuSafetyTemp
+            // 
+            this.lblGpuSafetyTemp.AutoSize = true;
+            this.lblGpuSafetyTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGpuSafetyTemp.Location = new System.Drawing.Point(380, 281);
+            this.lblGpuSafetyTemp.Name = "lblGpuSafetyTemp";
+            this.lblGpuSafetyTemp.Size = new System.Drawing.Size(125, 18);
+            this.lblGpuSafetyTemp.TabIndex = 22;
+            this.lblGpuSafetyTemp.Text = "GPU safety temp:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(155, 281);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(21, 18);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "%";
             // 
             // pnlProfiles
             // 
@@ -658,7 +796,7 @@ namespace ClevoFanControl {
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(456, 599);
+            this.btnExit.Location = new System.Drawing.Point(454, 569);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(135, 30);
             this.btnExit.TabIndex = 14;
@@ -671,7 +809,7 @@ namespace ClevoFanControl {
             // 
             this.btnAlwaysOnTop.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnAlwaysOnTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlwaysOnTop.Location = new System.Drawing.Point(12, 599);
+            this.btnAlwaysOnTop.Location = new System.Drawing.Point(12, 569);
             this.btnAlwaysOnTop.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.btnAlwaysOnTop.Name = "btnAlwaysOnTop";
             this.btnAlwaysOnTop.Size = new System.Drawing.Size(130, 30);
@@ -681,83 +819,11 @@ namespace ClevoFanControl {
             this.btnAlwaysOnTop.UseVisualStyleBackColor = true;
             this.btnAlwaysOnTop.CheckedChanged += new System.EventHandler(this.btnAlwaysOnTop_CheckedChanged);
             // 
-            // lblCpuSafetyTemp
-            // 
-            this.lblCpuSafetyTemp.AutoSize = true;
-            this.lblCpuSafetyTemp.Location = new System.Drawing.Point(12, 568);
-            this.lblCpuSafetyTemp.Name = "lblCpuSafetyTemp";
-            this.lblCpuSafetyTemp.Size = new System.Drawing.Size(124, 18);
-            this.lblCpuSafetyTemp.TabIndex = 17;
-            this.lblCpuSafetyTemp.Text = "CPU safety temp:";
-            // 
-            // lblCpuSafetyTemp2
-            // 
-            this.lblCpuSafetyTemp2.AutoSize = true;
-            this.lblCpuSafetyTemp2.Location = new System.Drawing.Point(180, 568);
-            this.lblCpuSafetyTemp2.Name = "lblCpuSafetyTemp2";
-            this.lblCpuSafetyTemp2.Size = new System.Drawing.Size(14, 18);
-            this.lblCpuSafetyTemp2.TabIndex = 20;
-            this.lblCpuSafetyTemp2.Text = "°";
-            // 
-            // txtCpuSafetyTemp
-            // 
-            this.txtCpuSafetyTemp.Location = new System.Drawing.Point(137, 566);
-            this.txtCpuSafetyTemp.Minimum = new decimal(new int[] {
-            80,
-            0,
-            0,
-            0});
-            this.txtCpuSafetyTemp.Name = "txtCpuSafetyTemp";
-            this.txtCpuSafetyTemp.Size = new System.Drawing.Size(45, 24);
-            this.txtCpuSafetyTemp.TabIndex = 21;
-            this.txtCpuSafetyTemp.Value = new decimal(new int[] {
-            90,
-            0,
-            0,
-            0});
-            this.txtCpuSafetyTemp.ValueChanged += new System.EventHandler(this.txtCpuSafetyTemp_ValueChanged);
-            // 
-            // txtGpuSafetyTemp
-            // 
-            this.txtGpuSafetyTemp.Location = new System.Drawing.Point(330, 566);
-            this.txtGpuSafetyTemp.Minimum = new decimal(new int[] {
-            80,
-            0,
-            0,
-            0});
-            this.txtGpuSafetyTemp.Name = "txtGpuSafetyTemp";
-            this.txtGpuSafetyTemp.Size = new System.Drawing.Size(45, 24);
-            this.txtGpuSafetyTemp.TabIndex = 24;
-            this.txtGpuSafetyTemp.Value = new decimal(new int[] {
-            90,
-            0,
-            0,
-            0});
-            this.txtGpuSafetyTemp.ValueChanged += new System.EventHandler(this.txtGpuSafetyTemp_ValueChanged);
-            // 
-            // lblGpuSafetyTemp2
-            // 
-            this.lblGpuSafetyTemp2.AutoSize = true;
-            this.lblGpuSafetyTemp2.Location = new System.Drawing.Point(373, 568);
-            this.lblGpuSafetyTemp2.Name = "lblGpuSafetyTemp2";
-            this.lblGpuSafetyTemp2.Size = new System.Drawing.Size(14, 18);
-            this.lblGpuSafetyTemp2.TabIndex = 23;
-            this.lblGpuSafetyTemp2.Text = "°";
-            // 
-            // lblGpuSafetyTemp
-            // 
-            this.lblGpuSafetyTemp.AutoSize = true;
-            this.lblGpuSafetyTemp.Location = new System.Drawing.Point(205, 568);
-            this.lblGpuSafetyTemp.Name = "lblGpuSafetyTemp";
-            this.lblGpuSafetyTemp.Size = new System.Drawing.Size(125, 18);
-            this.lblGpuSafetyTemp.TabIndex = 22;
-            this.lblGpuSafetyTemp.Text = "GPU safety temp:";
-            // 
             // btnGpuBattMonitor
             // 
             this.btnGpuBattMonitor.Appearance = System.Windows.Forms.Appearance.Button;
             this.btnGpuBattMonitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGpuBattMonitor.Location = new System.Drawing.Point(152, 599);
+            this.btnGpuBattMonitor.Location = new System.Drawing.Point(152, 569);
             this.btnGpuBattMonitor.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.btnGpuBattMonitor.Name = "btnGpuBattMonitor";
             this.btnGpuBattMonitor.Size = new System.Drawing.Size(130, 30);
@@ -773,47 +839,12 @@ namespace ClevoFanControl {
             this.tmrGui.Interval = 1000;
             this.tmrGui.Tick += new System.EventHandler(this.tmrGui_Tick);
             // 
-            // txtMinimumFanSpeed
-            // 
-            this.txtMinimumFanSpeed.Location = new System.Drawing.Point(532, 566);
-            this.txtMinimumFanSpeed.Name = "txtMinimumFanSpeed";
-            this.txtMinimumFanSpeed.Size = new System.Drawing.Size(45, 24);
-            this.txtMinimumFanSpeed.TabIndex = 28;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(575, 568);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 18);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "%";
-            // 
-            // checkboxOnAC
-            // 
-            this.checkboxOnAC.AutoSize = true;
-            this.checkboxOnAC.Location = new System.Drawing.Point(426, 567);
-            this.checkboxOnAC.Name = "checkboxOnAC";
-            this.checkboxOnAC.Size = new System.Drawing.Size(100, 22);
-            this.checkboxOnAC.TabIndex = 29;
-            this.checkboxOnAC.Text = "Min on AC:";
-            this.checkboxOnAC.UseVisualStyleBackColor = true;
-            // 
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(609, 657);
-            this.Controls.Add(this.checkboxOnAC);
-            this.Controls.Add(this.txtMinimumFanSpeed);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(609, 611);
             this.Controls.Add(this.btnGpuBattMonitor);
-            this.Controls.Add(this.txtGpuSafetyTemp);
-            this.Controls.Add(this.lblGpuSafetyTemp2);
-            this.Controls.Add(this.lblGpuSafetyTemp);
-            this.Controls.Add(this.txtCpuSafetyTemp);
-            this.Controls.Add(this.lblCpuSafetyTemp2);
-            this.Controls.Add(this.lblCpuSafetyTemp);
             this.Controls.Add(this.btnAlwaysOnTop);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.pnlProfiles);
@@ -849,17 +880,18 @@ namespace ClevoFanControl {
             this.prgCPUFanContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.prgCPUFan)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.tabFanCurves.ResumeLayout(false);
             this.tabFanCurveCPU.ResumeLayout(false);
+            this.tabFanCurveCPU.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMinimumOnCPU)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCpuSafetyTemp)).EndInit();
             this.tabFanCurveGPU.ResumeLayout(false);
+            this.tabFanCurveGPU.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMinimumOnGPU)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGpuSafetyTemp)).EndInit();
             this.pnlProfiles.ResumeLayout(false);
             this.pnlProfiles.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCpuSafetyTemp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGpuSafetyTemp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMinimumFanSpeed)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -893,7 +925,6 @@ namespace ClevoFanControl {
         private System.Windows.Forms.TabControl tabFanCurves;
         private System.Windows.Forms.TabPage tabFanCurveCPU;
         private System.Windows.Forms.TabPage tabFanCurveGPU;
-        private System.Windows.Forms.Label lblFanCurveHeader;
         private System.Windows.Forms.PictureBox imgStatIntel;
         private System.Windows.Forms.PictureBox imgStatNvidia;
         private System.Windows.Forms.PictureBox imgStatFan;
@@ -924,9 +955,12 @@ namespace ClevoFanControl {
         private CurveEditorControl.PlotCanvasContainer cpuPlot;
         private CurveEditorControl.PlotCanvasContainer gpuPlot;
         private System.Windows.Forms.Timer tmrGui;
-        private System.Windows.Forms.NumericUpDown txtMinimumFanSpeed;
+        private System.Windows.Forms.NumericUpDown txtMinimumOnCPU;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkboxOnAC;
+        private System.Windows.Forms.CheckBox checkboxCPUOnAC;
+        private System.Windows.Forms.CheckBox checkboxGPUOnAC;
+        private System.Windows.Forms.NumericUpDown txtMinimumOnGPU;
+        private System.Windows.Forms.Label label2;
     }
 }
 
