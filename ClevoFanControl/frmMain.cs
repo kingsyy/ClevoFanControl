@@ -842,6 +842,10 @@ namespace ClevoFanControl {
         private void btnExit_Click(object sender, EventArgs e) {
             ExitApp();
         }
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
 
         private void btnAlwaysOnTop_CheckedChanged(object sender, EventArgs e) {
             TopMost = btnAlwaysOnTop.Checked;

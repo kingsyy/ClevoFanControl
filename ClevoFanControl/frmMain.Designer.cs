@@ -90,6 +90,7 @@ namespace ClevoFanControl {
             this.tipTooltip = new System.Windows.Forms.ToolTip(this.components);
             this.btnGpuBattMonitor = new System.Windows.Forms.CheckBox();
             this.tmrGui = new System.Windows.Forms.Timer(this.components);
+            this.btnClose = new System.Windows.Forms.Button();
             this.mnuMain.SuspendLayout();
             this.pnlCPUStats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgStatIntel)).BeginInit();
@@ -796,7 +797,7 @@ namespace ClevoFanControl {
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(454, 569);
+            this.btnExit.Location = new System.Drawing.Point(313, 569);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(135, 30);
             this.btnExit.TabIndex = 14;
@@ -839,11 +840,23 @@ namespace ClevoFanControl {
             this.tmrGui.Interval = 1000;
             this.tmrGui.Tick += new System.EventHandler(this.tmrGui_Tick);
             // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(454, 569);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(135, 30);
+            this.btnClose.TabIndex = 26;
+            this.btnClose.TabStop = false;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(609, 611);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnGpuBattMonitor);
             this.Controls.Add(this.btnAlwaysOnTop);
             this.Controls.Add(this.btnExit);
@@ -961,6 +974,7 @@ namespace ClevoFanControl {
         private System.Windows.Forms.CheckBox checkboxGPUOnAC;
         private System.Windows.Forms.NumericUpDown txtMinimumOnGPU;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnClose;
     }
 }
 
