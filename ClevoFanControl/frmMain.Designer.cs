@@ -541,7 +541,7 @@ namespace ClevoFanControl {
             // 
             this.checkboxCPUOnAC.AutoSize = true;
             this.checkboxCPUOnAC.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkboxCPUOnAC.Location = new System.Drawing.Point(6, 280);
+            this.checkboxCPUOnAC.Location = new System.Drawing.Point(16, 281);
             this.checkboxCPUOnAC.Name = "checkboxCPUOnAC";
             this.checkboxCPUOnAC.Size = new System.Drawing.Size(100, 22);
             this.checkboxCPUOnAC.TabIndex = 29;
@@ -551,7 +551,7 @@ namespace ClevoFanControl {
             // txtMinimumOnCPU
             // 
             this.txtMinimumOnCPU.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMinimumOnCPU.Location = new System.Drawing.Point(112, 279);
+            this.txtMinimumOnCPU.Location = new System.Drawing.Point(122, 280);
             this.txtMinimumOnCPU.Name = "txtMinimumOnCPU";
             this.txtMinimumOnCPU.Size = new System.Drawing.Size(45, 24);
             this.txtMinimumOnCPU.TabIndex = 28;
@@ -560,7 +560,7 @@ namespace ClevoFanControl {
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(155, 281);
+            this.label1.Location = new System.Drawing.Point(165, 282);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(21, 18);
             this.label1.TabIndex = 27;
@@ -570,7 +570,7 @@ namespace ClevoFanControl {
             // 
             this.lblCpuSafetyTemp.AutoSize = true;
             this.lblCpuSafetyTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCpuSafetyTemp.Location = new System.Drawing.Point(379, 281);
+            this.lblCpuSafetyTemp.Location = new System.Drawing.Point(358, 282);
             this.lblCpuSafetyTemp.Name = "lblCpuSafetyTemp";
             this.lblCpuSafetyTemp.Size = new System.Drawing.Size(124, 18);
             this.lblCpuSafetyTemp.TabIndex = 17;
@@ -579,7 +579,7 @@ namespace ClevoFanControl {
             // txtCpuSafetyTemp
             // 
             this.txtCpuSafetyTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCpuSafetyTemp.Location = new System.Drawing.Point(504, 279);
+            this.txtCpuSafetyTemp.Location = new System.Drawing.Point(483, 280);
             this.txtCpuSafetyTemp.Minimum = new decimal(new int[] {
             80,
             0,
@@ -599,7 +599,7 @@ namespace ClevoFanControl {
             // 
             this.lblCpuSafetyTemp2.AutoSize = true;
             this.lblCpuSafetyTemp2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCpuSafetyTemp2.Location = new System.Drawing.Point(547, 281);
+            this.lblCpuSafetyTemp2.Location = new System.Drawing.Point(526, 282);
             this.lblCpuSafetyTemp2.Name = "lblCpuSafetyTemp2";
             this.lblCpuSafetyTemp2.Size = new System.Drawing.Size(14, 18);
             this.lblCpuSafetyTemp2.TabIndex = 20;
@@ -626,7 +626,7 @@ namespace ClevoFanControl {
             // 
             this.checkboxGPUOnAC.AutoSize = true;
             this.checkboxGPUOnAC.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkboxGPUOnAC.Location = new System.Drawing.Point(6, 280);
+            this.checkboxGPUOnAC.Location = new System.Drawing.Point(16, 280);
             this.checkboxGPUOnAC.Name = "checkboxGPUOnAC";
             this.checkboxGPUOnAC.Size = new System.Drawing.Size(100, 22);
             this.checkboxGPUOnAC.TabIndex = 32;
@@ -636,7 +636,7 @@ namespace ClevoFanControl {
             // txtMinimumOnGPU
             // 
             this.txtMinimumOnGPU.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMinimumOnGPU.Location = new System.Drawing.Point(112, 279);
+            this.txtMinimumOnGPU.Location = new System.Drawing.Point(122, 279);
             this.txtMinimumOnGPU.Name = "txtMinimumOnGPU";
             this.txtMinimumOnGPU.Size = new System.Drawing.Size(45, 24);
             this.txtMinimumOnGPU.TabIndex = 31;
@@ -644,7 +644,7 @@ namespace ClevoFanControl {
             // txtGpuSafetyTemp
             // 
             this.txtGpuSafetyTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGpuSafetyTemp.Location = new System.Drawing.Point(505, 279);
+            this.txtGpuSafetyTemp.Location = new System.Drawing.Point(483, 279);
             this.txtGpuSafetyTemp.Minimum = new decimal(new int[] {
             80,
             0,
@@ -694,7 +694,7 @@ namespace ClevoFanControl {
             // 
             this.lblGpuSafetyTemp2.AutoSize = true;
             this.lblGpuSafetyTemp2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGpuSafetyTemp2.Location = new System.Drawing.Point(548, 281);
+            this.lblGpuSafetyTemp2.Location = new System.Drawing.Point(526, 281);
             this.lblGpuSafetyTemp2.Name = "lblGpuSafetyTemp2";
             this.lblGpuSafetyTemp2.Size = new System.Drawing.Size(14, 18);
             this.lblGpuSafetyTemp2.TabIndex = 23;
@@ -704,7 +704,7 @@ namespace ClevoFanControl {
             // 
             this.lblGpuSafetyTemp.AutoSize = true;
             this.lblGpuSafetyTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGpuSafetyTemp.Location = new System.Drawing.Point(380, 281);
+            this.lblGpuSafetyTemp.Location = new System.Drawing.Point(358, 281);
             this.lblGpuSafetyTemp.Name = "lblGpuSafetyTemp";
             this.lblGpuSafetyTemp.Size = new System.Drawing.Size(125, 18);
             this.lblGpuSafetyTemp.TabIndex = 22;
@@ -714,7 +714,7 @@ namespace ClevoFanControl {
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(155, 281);
+            this.label2.Location = new System.Drawing.Point(165, 281);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(21, 18);
             this.label2.TabIndex = 30;
