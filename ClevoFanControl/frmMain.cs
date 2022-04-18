@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Management;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -14,8 +11,8 @@ namespace ClevoFanControl {
         private const int EC_POLL_INTERVAL = 3000; // interval to poll EC
         
         int timerTickCount = 0;
-        int cpuFanRampIntervals = 5;
-        int gpuFanRampIntervals = 5;
+        readonly int fanRampPercentageIntervals = 5;
+        readonly int fanRampDelay = 100;
 
         private IFanControl fan;
 
@@ -171,13 +168,13 @@ namespace ClevoFanControl {
 
             if (!clevoAutoFans) {
                 if (currentCpuFan != prevFanCPUPercentage || timerTickCount * tmrMain.Interval * 0.001 >= 60) {
-                    fan?.SetFanSpeed(1, currentCpuFan);
+                    SetFanSpeed(1, currentCpuFan, prevFanCPUPercentage);
                     prevFanCPUPercentage = currentCpuFan;
                     cpuSameTempTicks = 0;
                 }
 
                 if (currentGpuFan != prevFanGPUPercentage || timerTickCount * tmrMain.Interval * 0.001 >= 60) {
-                    fan?.SetFanSpeed(2, currentGpuFan);
+                    SetFanSpeed(2, currentGpuFan, prevFanGPUPercentage);
                     prevFanGPUPercentage = currentGpuFan;
                     gpuSameTempTicks = 0;
                 }
@@ -312,27 +309,19 @@ namespace ClevoFanControl {
             fan?.SetFanSpeed(2, 100);
         }
 
-        private void RampFanSpeed(int FanNumber, int FanSpeed) {
-            if (FanNumber == 1) {
-                int rampPercentage = (FanSpeed - prevFanCPUPercentage) / cpuFanRampIntervals;
-                Parallel.For(1, cpuFanRampIntervals, i => {
-                    fan?.SetFanSpeed(1, prevFanCPUPercentage + (i * rampPercentage));
-                    Thread.Sleep(100);
-                });
-
-                //for (int i = 1; i <= cpuFanRampIntervals; i++) {
-                //    fan?.SetFanSpeed(1, prevFanCPUPercentage + (i * rampPercentage));
-                //    Thread.Sleep(100);
-                //}
-            } else if (FanNumber == 2) {
-                int rampPercentage = (FanSpeed - prevFanGPUPercentage) / gpuFanRampIntervals;
-                Parallel.For(1, gpuFanRampIntervals, i => {
-                    fan?.SetFanSpeed(2, prevFanGPUPercentage + (i * rampPercentage));
-                    Thread.Sleep(100);
-                });
-                //for (int i = 1; i <= gpuFanRampIntervals; i++) {
-                //    Thread.Sleep(100);
-                //}
+        private void SetFanSpeed(int fanNumber, int newFanSpeed, int currentFanSpeed) 
+        {
+            if (newFanSpeed > currentFanSpeed) 
+            {
+                fan?.SetFanSpeed(fanNumber, newFanSpeed);
+            }
+            else
+            {
+                for (int i = currentFanSpeed - fanRampPercentageIntervals; i >= newFanSpeed; i -= fanRampPercentageIntervals)
+                {
+                    fan?.SetFanSpeed(fanNumber, i);
+                    Thread.Sleep(fanRampDelay);
+                }
             }
         }
 
@@ -943,10 +932,6 @@ namespace ClevoFanControl {
         public int Fan75;
         public int Fan80;
         public int Fan85;
-    }
-
-    public class PlotChangedEventArgs : EventArgs {
-        public int[] PlotValues { get; set; }
     }
 
 }
