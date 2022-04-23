@@ -124,8 +124,12 @@ namespace CurveEditorControl
                 }
 
                 currentPercentages[index] = perc;
-                PlotCanvas.Invalidate();
+                RedrawCanvas();
             }
+        }
+        public void RedrawCanvas()
+        {
+            PlotCanvas.Invalidate();
         }
 
         private void PlotCanvas_Paint(object sender, PaintEventArgs e)
